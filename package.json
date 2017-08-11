@@ -22,5 +22,8 @@
   "homepage": "https://github.com/softcraft-development/d3-playground#readme",
   "devDependencies": {
     "webpack": "^3.5.3"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7"
   }
 }
