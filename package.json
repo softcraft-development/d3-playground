@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/softcraft-development/d3-playground/issues"
   },
-  "homepage": "https://github.com/softcraft-development/d3-playground#readme"
+  "homepage": "https://github.com/softcraft-development/d3-playground#readme",
+  "devDependencies": {
+    "webpack": "^3.5.3"
+  }
 }
