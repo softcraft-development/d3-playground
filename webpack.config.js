@@ -9,8 +9,7 @@ module.exports = {
     module: {
         loaders: [{
             test: /\.js$/,
-            // loaders: ['babel-loader?presets[]=es2015'],
-            loader: "file-loader",
+            loaders: ['babel-loader?presets[]=es2015'],
             exclude: /(node_modules|bower_components)/
         }, {
             test: /\.css$/,
