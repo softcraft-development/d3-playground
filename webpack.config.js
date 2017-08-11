@@ -1,5 +1,6 @@
 
 var path = require("path");
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, "src"),
@@ -34,5 +35,10 @@ module.exports = {
     output: {
         path: __dirname + "/dist",
         filename: "bundle.js"
-    }
+    },
+    plugins: [
+        new CopyWebpackPlugin([
+            { from: 'index.html' },
+        ])
+    ]
 };
