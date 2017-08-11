@@ -24,7 +24,7 @@ $(document).ready(() => {
         .domain([0, total])
         .range([0, 1]);
     const hue = d3.scaleLinear()
-        .domain(d3.extent(data, (d) => d.sum))
+        .domain(d3.extent(data, (d) => d.n))
         .range([0, 359 - 30]);
     
     const minRadius = width(d3.min(data, (d) => d.value)) / 2 / 2;
@@ -36,7 +36,7 @@ $(document).ready(() => {
         .attr("cy", d3.randomNormal())
         .attr("cx", -0.1)
         .attr("r", minRadius)
-        .style("fill", (d) => d3.hsl(hue(d.sum), 1, 0.5).toString())
+        .style("fill", (d) => d3.hsl(hue(d.n), 1, 0.5).toString())
         .transition()
         .duration(500)
         .delay((d) => d.n * 250)
