@@ -1,4 +1,4 @@
-
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require("path");
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -11,16 +11,22 @@ module.exports = {
             test: /\.js$/,
             loaders: ['babel-loader?presets[]=es2015'],
             exclude: /(node_modules|bower_components)/
-        }, {
+        },
+        {
             test: /\.css$/,
-            loaders: ['style', 'css']
-        }, {
+            use: ExtractTextPlugin.extract({
+                fallback: "style-loader",
+                use: "css-loader"
+            })
+        },
+        {
             test: /\.scss$/,
-            loaders: ['style', 'css', 'postcss', 'sass']
-        }, {
-            test: /\.sass$/,
-            loader: 'style!css!sass?sourceMap'
-        }, {
+            use: ExtractTextPlugin.extract({
+                fallback: "style-loader",
+                use: ["css-loader", "sass-loader"]
+            })
+        },
+        {
             test: /\.woff$/,
             loader: "url-loader?limit=10000&mimetype=application/font-woff&name=[path][name].[ext]"
         }, {
@@ -38,6 +44,10 @@ module.exports = {
     plugins: [
         new CopyWebpackPlugin([
             { from: 'index.html' },
-        ])
-    ]
+        ]),
+        new ExtractTextPlugin("bundle.css")
+    ],
+    resolve: {
+        extensions: ['.js', '.scss', '.css']
+    }
 };
