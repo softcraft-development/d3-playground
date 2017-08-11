@@ -3,6 +3,7 @@ var path = require("path");
 
 module.exports = {
     context: path.resolve(__dirname, "src"),
+    devtool: "source-map",
     entry: "./index.js",
     module: {
         loaders: [{
