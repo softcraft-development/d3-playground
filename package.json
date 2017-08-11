@@ -22,6 +22,7 @@
   "homepage": "https://github.com/softcraft-development/d3-playground#readme",
   "devDependencies": {
     "copy-webpack-plugin": "^4.0.1",
+    "eslint": "^4.4.1",
     "webpack": "^3.5.3"
   },
   "dependencies": {
