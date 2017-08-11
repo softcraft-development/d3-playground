@@ -1,5 +1,16 @@
-.wrapper {
+html, body {
+    height: 100%;
+}
+
+#page-content {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    height: 100%;
+}
+
+#viz {
     border: 1px solid rgba(0,0,0,0.5);
     box-shadow: 0.2em 0.2em 1em rgba(0,0,0,0.1);
-    padding: 1em;
+    flex-grow: 1;
 }

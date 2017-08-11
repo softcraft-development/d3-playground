@@ -20,5 +20,5 @@ $(document).ready(() => {
         .attr("r", (d) => d * 20)
         ;
 
-    svg.style("width", "100%").style("height", 200);
+    svg.style("width", "100%").style("height", "auto");
 });
